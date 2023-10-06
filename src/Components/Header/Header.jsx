@@ -1,7 +1,22 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+
+
+    const handleSignOut = () => {
+        logOut()
+            .then(res => {
+                console.log(res.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     const navLinks = <>
 
@@ -34,7 +49,7 @@ const Header = () => {
 
     return (
         <div className="bg-gray-400">
-            <div className="navbar max-w-[1500px] mx-auto px-4 md:px-8 lg:px-16">
+            <div className="navbar py-3 max-w-[1500px] mx-auto px-4 md:px-8 lg:px-16">
                 <div className="navbar-start pl-8" >
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -75,15 +90,36 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end pr-8">
-                    <ul className="text-xl font-bold">
-                        <li><NavLink
-                            to="/login"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
-                            }
-                        >
-                            Login
-                        </NavLink></li>
+                    <ul className="text-xl flex items-center font-bold">
+                        {
+                            user ? <div className="dropdown dropdown-end">
+                                <label tabIndex={0} >
+                                    <div className="avatar cursor-pointer">
+                                        <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                            {
+                                                user?.photoURL ? 
+                                                <img src={user.photoURL} /> : 
+                                                 <img className="bg-green-400" />
+                                            }
+                                        </div>
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-3 shadow space-y-2 min-w-[150px] bg-base-100 rounded-box px-4">
+                                    <li>{user.displayName}</li>
+                                    <li >{user.email}</li>
+                                    <hr />
+                                    <button onClick={handleSignOut} className="text-xl border-black border-2 p-1 hover:bg-green-300 rounded-lg text-left">Log out</button>
+                                </ul>
+                            </div> :
+                                <li><NavLink
+                                    to="/login"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
+                                    }
+                                >
+                                    Login
+                                </NavLink></li>
+                        }
                     </ul>
                 </div>
             </div>

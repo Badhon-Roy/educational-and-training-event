@@ -1,16 +1,49 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
+import swal from 'sweetalert';
+import { FaRegEye ,FaRegEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
+    const { createUser, userProfile } = useContext(AuthContext)
+    const [errorMassage, setErrorMassage] = useState('')
+    const [showPassword , setShowPassword] = useState(false)
 
-    const handleRegister = e =>{
+    const handleRegister = e => {
         e.preventDefault()
-        const name = e.target.email.value;
-        const imgae = e.target.image.value;
+        const name = e.target.name.value;
+        const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password , name , imgae);
         
+
+        if (password.length < 6 && (!/^(?=.*[!@#$%^&*])(?=.*[A-Z]).$/.test(password))) {
+            setErrorMassage("Password should be at least 6 characters, one Capital letter and one spacial characters")
+            return;
+        }
+
+        createUser(email, password)
+            .then(res => {
+                userProfile(name, image)
+                    .then(res => {
+                        console.log(res.user);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+                console.log(res.user);
+                swal("Good job", "Register successful", "success");
+                window.location.reload();
+            })
+            .catch(error => {
+                setErrorMassage(error.message)
+            })
+    }
+
+
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword)
     }
     return (
         <div className="bg-base-200">
@@ -27,32 +60,47 @@ const Register = () => {
                                 </label>
                                 <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
                             </div>
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="text-xl mt-2">Image URL</span>
                                 </label>
-                                <input type="text" name="image" placeholder="image url" className="input input-bordered" required />
+                                <input type="text" name="image" placeholder="image url" className="input input-bordered" />
                             </div>
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="text-xl mt-2">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="text-xl mt-2">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <div className="relative">
+                                <input type={`${showPassword ? 'text' : 'password' }`} name="password" placeholder="password" className="input input-bordered w-full" required />
+                                
+                                <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
+                                    {
+                                        showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
+                                    }
+                                </p>
+                                </div>
+
+
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-secondary text-xl text-white">Login</button>
+                                <button className="btn btn-secondary text-xl text-white">Register</button>
                             </div>
                         </form>
-                        <p>You have an account? <Link to="/login"> <span  className="text-blue-600 font-bold cursor-pointer text-[18px]">Login</span></Link> </p>
+                        {
+                            errorMassage && <p className="text-red-500">{errorMassage}</p>
+                        }
+                        <p>You have an account? <Link to="/login"> <span className="text-blue-600 font-bold cursor-pointer text-[18px]">Login</span></Link> </p>
                     </div>
                 </div>
             </div>
