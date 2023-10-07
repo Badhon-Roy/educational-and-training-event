@@ -11,9 +11,9 @@ const Service = ({ service }) => {
             <div className="card card-compact bg-base-100 shadow-xl">
                 <figure><img className='w-full h-[250px]' src={image} alt="service" /></figure>
                 <div className="card-body">
-                    <h2 className="text-2xl font-semibold">{name}</h2>
-                    <p className='text-[18px]'>{description.slice(0,150)}......</p>
-                    <p className='text-2xl font-medium'>Price : ${price}</p>
+                    <h2 className="text-xl font-semibold">{name}</h2>
+                    <p className='font-medium'>{description.slice(0,150)}......</p>
+                    <p className='text-xl font-medium'>Price : ${price}</p>
                     <div className="card-actions justify-end">
                     <Link to={`/service/${id}`} ><button className="btn btn-outline btn-secondary transition delay-200 ease-in">See details</button></Link>
                     </div>

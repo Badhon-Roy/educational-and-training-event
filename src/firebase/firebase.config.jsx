@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBL-m2TSR_02Ze4I0cgt_73ymc5FQZGp1g",
-  authDomain: "educational-and-training-event.firebaseapp.com",
-  projectId: "educational-and-training-event",
-  storageBucket: "educational-and-training-event.appspot.com",
-  messagingSenderId: "60456310184",
-  appId: "1:60456310184:web:38b84378dedf833b04399d"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
