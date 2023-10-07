@@ -6,7 +6,7 @@ import { MdPublishedWithChanges  , MdOutlineSdCardAlert}  from 'react-icons/md';
 const AboutUs = () => {
     return (
         <div>
-            <div className="grid md:grid-cols-2 gap-4 my-32">
+            <div className="grid md:grid-cols-2 gap-4 md:my-32">
                 <div className="mt-8">
                     <p className="text-4xl mb-3 caveat-font font-semibold text-[#fe2d7b]">welcome</p>
                     <h3 className="text-5xl font-bold">We Inspire People to Go Out More</h3>

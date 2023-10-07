@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 
 import {FaFacebookF ,FaTwitter ,FaInstagramSquare } from 'react-icons/fa';
 
-const Speaker = ({speaker}) => {
-    const {image , name , position} = speaker;
+const Photographer = ({photographer}) => {
+    const {image , name , position} = photographer;
     return (
         <div className="card bg-base-100 shadow-xl">
-        <figure><img className="rounded-full p-8" src={image} alt="speaker" /></figure>
+        <figure><img className="rounded-full p-8" src={image} alt="photographer" /></figure>
         <div className="text-center">
           <h2 className="md:text-2xl text-xl font-semibold">{name}</h2>
           <p className="md:text-[18px]">{position}</p>
@@ -21,8 +21,8 @@ const Speaker = ({speaker}) => {
       </div>
     );
 };
-Speaker.propTypes = {
-    speaker : PropTypes.object
+Photographer.propTypes = {
+    photographer : PropTypes.object
 }
 
-export default Speaker;
+export default Photographer;
