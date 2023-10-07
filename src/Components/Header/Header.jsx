@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import swal from "sweetalert";
 
 
 const Header = () => {
@@ -10,8 +11,8 @@ const Header = () => {
 
     const handleSignOut = () => {
         logOut()
-            .then(res => {
-                console.log(res.user);
+            .then(() => {
+                swal("Log Out", "successful", "success")
             })
             .catch(error => {
                 console.log(error);

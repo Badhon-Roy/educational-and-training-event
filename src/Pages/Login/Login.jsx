@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
 import { FaRegEye ,FaRegEyeSlash } from 'react-icons/fa';
+import swal from "sweetalert";
 
 const Login = () => {
     const [errorMassage, setErrorMassage] = useState('')
@@ -35,6 +36,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 navigate(location?.state ? location.state : '/')
+                swal("Log in", "successful", "success")
             })
             .catch(error => {
                 console.log(error);

@@ -13,6 +13,7 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ErrorPage from './ErrorPage/ErrorPage';
+import CoursesDetails from './Pages/CoursesDetails/CoursesDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path : "/service/:id",
+        element : <CoursesDetails></CoursesDetails>,
+        loader : async({params})=>{
+          const services = await fetch("/Services.json")
+          const res = await services.json()
+          const service = res.find(item => item.id === parseInt(params.id))
+          return service;
+        }
       },
       {
         path: '/about',

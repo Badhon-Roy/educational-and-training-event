@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image": "https://tinyurl.com/yxd2rjnn",
+      "name": "Event Planning and Management",
+      "description": "Event planning and management services for educational training events can help you to save time and stress, and to ensure that your event is a success. These services can be tailored to your specific needs and budget, and can include everything from venue selection and catering to speaker and sponsor management.",
+      "price": 19.99
+    },
+    {
+      "id": 2,
+      "image": "https://media.istockphoto.com/id/1039606566/photo/business-people-listening-to-the-speaker-at-a-conference.jpg?s=612x612&w=0&k=20&c=bwmTcBlilZg5hGgG05UzAtH3xMI8ohQhPZ4vKKKh8j8=",
+      "name": "Speaker and trainer",
+      "description": "Speaker and trainer services for educational training events can help you to find and book speakers and trainers for your event, and to manage the logistics of their participation. These services can be tailored to your specific needs and budget, and can include everything from speaker identification and booking to travel and accommodations.",
+      "price": 39.99
+    },
+    {
+      "id": 3,
+      "image": "https://s30876.pcdn.co/wp-content/uploads/Career-Connections-1170x630.jpg.optimal.jpg",
+      "name": "Networking Opportunities",
+      "description": "Networking opportunities services for educational training events can help you to create and manage networking opportunities for your attendees. These services can be tailored to your specific needs and budget, and can include everything from developing a networking plan to facilitating networking activities.",
+      "price": 49.99
+    },
+    {
+      "id": 4,
+      "image": "https://whatfix.com/blog/wp-content/uploads/2021/09/change-management-checklist-26.png",
+      "name": "Content creation and curriculum design",
+      "description": "Content creation and curriculum design services for educational training program events can help you to develop high-quality, engaging, and effective content for your event. These services can be tailored to your specific needs and budget, and can include everything from brainstorming topics and developing learning objectives to creating presentations, handouts, and other learning materials.",
+      "price": 59.99
+    },
+    {
+      "id": 5,
+      "image": "https://tinyurl.com/yzwe8p6n",
+      "name": "Photography and Videography",
+      "description": "Photography and videography services for educational training events can be used to capture the key moments of your event, such as presentations, demonstrations, and networking sessions. This content can then be used to promote your event, to create educational resources, and to document the event for future reference.",
+      "price": 89.99
+    },
+    {
+      "id": 6,
+      "image": "https://media.istockphoto.com/id/1189420418/photo/businesswoman-reviews-conference-schedule-with-colleague.jpg?s=612x612&w=0&k=20&c=UIGot4O-JdDJhzUQgBUalCF6OYvMrHuzwBTuQBlhERI=",
+      "name": "Registration and ticketing",
+      "description": "Registration and ticketing services for educational training program events can help you to manage the registration and ticketing process for your event. These services can be tailored to your specific needs and budget, and can include everything from creating an event website and registration form to processing payments and issuing tickets.",
+      "price": 89.99
+    }
+  ]
+  

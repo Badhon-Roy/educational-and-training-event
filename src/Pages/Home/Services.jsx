@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-import Course from "./Course";
+import Service from "./Service";
 
 
 const Services = () => {
-    const [courses , setCourses] = useState([])
+    const [services , setServices] = useState([])
     useEffect(()=>{
-        fetch('Course.json')
+        fetch('Services.json')
         .then(res => res.json())
-        .then(data =>setCourses(data))
+        .then(data =>setServices(data))
     },[])
     return (
         <div>
-            <h2 className="md:text-4xl text-2xl text-center font-semibold md:mt-32 mt-16 md:mb-16 mb-8" >Our Services</h2>
+            <h2 className="md:text-4xl text-2xl text-center font-semibold md:mt-32 mt-16 md:mb-16 mb-8" >Our Services <span className="w-[60px] mt-1P h-[5px]  mx-auto border-b-[5px] block border-orange-500"></span> </h2>
             <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mb-16">
                 {
-                    courses.map(course => <Course key={course.id} course={course}></Course> )
+                    services.map(service => <Service key={service.id} service={service}></Service> )
                 }
             </div>
         </div>
