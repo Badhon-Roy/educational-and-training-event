@@ -2,12 +2,13 @@
 import PropTypes from 'prop-types'
 
 
-import {FaFacebookF ,FaTwitter ,FaInstagramSquare } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagramSquare } from 'react-icons/fa';
 
-const Photographer = ({photographer}) => {
-    const {image , name , position} = photographer;
-    return (
-        <div className="card bg-base-100 shadow-xl">
+const Photographer = ({ photographer }) => {
+  const { image, name, position } = photographer;
+  return (
+    <div className='relative group'>
+      <div className="card bg-base-100 shadow-xl transition-transform transform scale-100 group-hover:scale-110 duration-300">
         <figure><img className="rounded-full p-8" src={image} alt="photographer" /></figure>
         <div className="text-center">
           <h2 className="md:text-2xl text-xl font-semibold">{name}</h2>
@@ -19,10 +20,11 @@ const Photographer = ({photographer}) => {
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 Photographer.propTypes = {
-    photographer : PropTypes.object
+  photographer: PropTypes.object
 }
 
 export default Photographer;

@@ -24,15 +24,23 @@ const Header = () => {
         <li><NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-green-400 rounded" : ""
+                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
             }
         >
             Home
         </NavLink></li>
         <li><NavLink
+            to="/gallery"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
+            }
+        >
+            Gallery
+        </NavLink></li>
+        <li><NavLink
             to="/about"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-green-400 rounded" : ""
+                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
             }
         >
             About us
@@ -40,11 +48,12 @@ const Header = () => {
         <li><NavLink
             to="/contact"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-green-400 rounded" : ""
+                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
             }
         >
             Contact
         </NavLink></li>
+        
     </>
 
 
@@ -67,15 +76,23 @@ const Header = () => {
                         <li ><NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             Home
                         </NavLink></li>
+                        <li ><NavLink
+                            to="/gallery"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
+                            }
+                        >
+                            Gallery
+                        </NavLink></li>
                         <li><NavLink
                             to="/about"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             About us
@@ -83,7 +100,7 @@ const Header = () => {
                         <li><NavLink
                             to="/contact"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded text-white px-4 py-2" : ""
                             }
                         >
                             Contact
@@ -100,7 +117,7 @@ const Header = () => {
                                             {
                                                 user?.photoURL ?
                                                     <img src={user.photoURL} /> :
-                                                    <img className="bg-green-400" />
+                                                    <img className="bg-orange-500 text-white" />
                                             }
                                         </div>
                                     </div>
@@ -115,7 +132,7 @@ const Header = () => {
                                 <li><NavLink
                                     to="/login"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "bg-green-400 rounded px-4 py-2" : ""
+                                        isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
                                     }
                                 >
                                     Login

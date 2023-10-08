@@ -15,6 +15,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ErrorPage from './ErrorPage/ErrorPage';
 import ServicesDetails from './Pages/ServicesDetails/ServicesDetails';
 import Contact from './Pages/Contact/Contact';
+import Gallery from './Pages/Gallery/Gallery';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path : '/contact',
         element : <Contact></Contact>
+      },
+      {
+        path : "/gallery",
+        element : <Gallery></Gallery>
       },
       {
         path: "/login",
