@@ -6,6 +6,7 @@ const ServicesDetails = () => {
     const { name, image, description, price } = service;
     console.log(service);
     return (
+        
         <div className="mt-8 md:mb-32 mb-8">
             <img className="md:h-[70vh] w-full" src={image} alt="" />
             <h2 className="md:text-5xl text-3xl font-bold mt-8 mb-4">{name}</h2>

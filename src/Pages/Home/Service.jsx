@@ -7,9 +7,10 @@ import { FaArrowRight } from 'react-icons/fa';
 const Service = ({ service }) => {
     const { name ,id , image , description , price} = service;
     return (
-        <div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure><img className='w-full h-[250px]' src={image} alt="service" /></figure>
+        <div data-aos="zoom-in">
+            
+            <div className="card card-compact bg-base-100 shadow-xl relative group">
+                <figure><img className='w-full h-[250px] transition-transform transform scale-100 group-hover:scale-110 duration-300' src={image} alt="service" /></figure>
                 <div className="card-body">
                     <h2 className="text-xl font-semibold">{name}</h2>
                     <p className='font-medium'>{description.slice(0,150)}......</p>

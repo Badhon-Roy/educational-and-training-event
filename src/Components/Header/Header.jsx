@@ -132,11 +132,11 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </label>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-3 shadow space-y-2 min-w-[150px] bg-base-100 rounded-box px-4">
+                                <ul tabIndex={0} className="dropdown-content z-[2] menu p-3 shadow space-y-2 min-w-[150px] bg-base-100 rounded-box px-4">
                                     <li>{user.displayName}</li>
                                     <li >{user.email}</li>
                                     <hr />
-                                    <button onClick={handleSignOut} className="text-xl border-black border-2 p-1 hover:bg-green-300 rounded-lg text-left">Log out</button>
+                                    <button onClick={handleSignOut} className="text-xl border-black border-2 p-1 bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 rounded-lg text-left">Log out</button>
                                 </ul>
                             </div> :
                                 <li><NavLink

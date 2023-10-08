@@ -5,20 +5,16 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import swal from "sweetalert";
 
 const Login = () => {
-    const [errorMassage, setErrorMassage] = useState('')
+    const [errorMassage, setErrorMassage] = useState(null)
     const [showPassword, setShowPassword] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
-
-
-
 
     const { googleSignIn, signIn } = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
         signIn(email, password)
             .then(res => {
                 console.log(res.user);
@@ -27,8 +23,8 @@ const Login = () => {
                 e.target.reset();
             })
             .catch(error => {
-                setErrorMassage('Login failed. Please check your email and password !')
-                console.log(error.massage);
+                setErrorMassage(error.message);
+                return;
             })
 
     }
