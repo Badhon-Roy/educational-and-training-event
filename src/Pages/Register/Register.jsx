@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
 import swal from 'sweetalert';
-import { FaRegEye ,FaRegEyeSlash } from 'react-icons/fa';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
     const { createUser, userProfile } = useContext(AuthContext)
     const [errorMassage, setErrorMassage] = useState('')
-    const [showPassword , setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
     const handleRegister = e => {
@@ -16,11 +16,24 @@ const Register = () => {
         const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        
-
-        if (password.length < 6 && (!/^(?=.*[!@#$%^&*])(?=.*[A-Z]).$/.test(password))) {
-            setErrorMassage("Password should be at least 6 characters, one Capital letter and one spacial characters")
+        if (password.length < 6) {
+            setErrorMassage("Password must be at least 6 characters");
             return;
+        }
+        else if (!/^(?=.*[a-z]).*$/.test(password)) {
+            setErrorMassage("Password must have at least one Lowercase Character.");
+            return;
+        }
+        else if(! /^(?=.*[A-Z]).*$/.test(password)){
+            setErrorMassage("Password must have at least one Uppercase Character.")
+            return;
+        }
+        else if(! /^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+            setErrorMassage("Password must contain at least one Special Symbol.")
+            return;
+        }
+        else {
+            setErrorMassage('');
         }
 
         createUser(email, password)
@@ -34,8 +47,10 @@ const Register = () => {
                     })
                 console.log(res.user);
                 navigate(location?.state ? location.state : '/')
-                swal("Good job", "Register successful", "success");
-                window.location.reload();
+                swal("Good job", "Register successful", "success").then(()=>{
+                    window.location.reload();
+
+                })
             })
             .catch(error => {
                 setErrorMassage(error.message)
@@ -81,13 +96,13 @@ const Register = () => {
                                     <span className="text-xl mt-2">Password</span>
                                 </label>
                                 <div className="relative">
-                                <input type={`${showPassword ? 'text' : 'password' }`} name="password" placeholder="password" className="input input-bordered w-full" required />
-                                
-                                <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
-                                    {
-                                        showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
-                                    }
-                                </p>
+                                    <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="password" className="input input-bordered w-full" required />
+
+                                    <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
+                                        {
+                                            showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
+                                        }
+                                    </p>
                                 </div>
 
 

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/service/:id",
-        element : <ServicesDetails></ServicesDetails>,
+        element : <PrivateRoute><ServicesDetails></ServicesDetails></PrivateRoute>,
         loader : async({params})=>{
           const services = await fetch("/Services.json")
           const res = await services.json()
@@ -42,11 +42,11 @@ const router = createBrowserRouter([
       },
       {
         path : '/contact',
-        element : <Contact></Contact>
+        element : <PrivateRoute><Contact></Contact></PrivateRoute>
       },
       {
         path : "/gallery",
-        element : <Gallery></Gallery>
+        element : <PrivateRoute><Gallery></Gallery></PrivateRoute>
       },
       {
         path: "/login",

@@ -1,34 +1,35 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
-import { FaRegEye ,FaRegEyeSlash } from 'react-icons/fa';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import swal from "sweetalert";
 
 const Login = () => {
     const [errorMassage, setErrorMassage] = useState('')
-    const [showPassword , setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
 
-    
 
 
-    const { googleSignIn , signIn } = useContext(AuthContext)
+
+    const { googleSignIn, signIn } = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
-        signIn(email ,password)
-        .then(res => {
-            console.log(res.user);
-            navigate(location?.state ? location.state : '/')
-            e.target.reset();
-        })
-        .catch(error => {
-            setErrorMassage('error')
-            console.log(error.massage);
-        })
+        signIn(email, password)
+            .then(res => {
+                console.log(res.user);
+                navigate(location?.state ? location.state : '/')
+                swal("Log in", "successful", "success")
+                e.target.reset();
+            })
+            .catch(error => {
+                setErrorMassage('Login failed. Please check your email and password !')
+                console.log(error.massage);
+            })
 
     }
     const handleGoogleLogin = () => {
@@ -47,7 +48,7 @@ const Login = () => {
     }
     return (
         <div className="bg-base-200">
-            <div className="md:w-2/4 mx-auto py-32 px-4">
+            <div className="lg:w-2/4 md:w-3/4 mx-auto py-32 px-4">
                 <div>
                     <h1 className="text-5xl font-bold text-center mb-8">Login now!</h1>
                 </div>
@@ -65,13 +66,13 @@ const Login = () => {
                                     <span className="text-xl mt-2">Password</span>
                                 </label>
                                 <div className="relative">
-                                <input type={`${showPassword ? 'text' : 'password' }`} name="password" placeholder="password" className="input input-bordered w-full" required />
-                                
-                                <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
-                                    {
-                                        showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
-                                    }
-                                </p>
+                                    <input type={`${showPassword ? 'text' : 'password'}`} name="password" placeholder="password" className="input input-bordered w-full" required />
+
+                                    <p className="absolute right-5 top-4 text-xl" onClick={handleShowPassword}>
+                                        {
+                                            showPassword ? <FaRegEyeSlash></FaRegEyeSlash> : <FaRegEye></FaRegEye>
+                                        }
+                                    </p>
                                 </div>
 
 
@@ -86,7 +87,12 @@ const Login = () => {
                         {
                             errorMassage && <p className="text-red-500">{errorMassage}</p>
                         }
-                        <button onClick={handleGoogleLogin} className="border-2 border-black lg:w-2/5 w-2/4 flex items-center gap-3 p-1 rounded-lg hover:bg-green-300 transition delay-200"><img className="w-8" src="https://tinyurl.com/4d5vrs96" alt="" />sign in google</button>
+                        <button onClick={handleGoogleLogin} className="border-2 font-bold border-black w-[170px] flex items-center gap-3 p-1 rounded-lg transform translate-x-0 transition-transform ease-in-out duration-300 hover:translate-x-5 bg-gradient-to-r hover:from-green-500 hover:to-blue-500">
+                            <img className="w-8" src="https://tinyurl.com/4d5vrs96" alt="" />
+                            sign in google
+                        </button>
+
+
 
 
 

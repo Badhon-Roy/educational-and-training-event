@@ -10,13 +10,23 @@ const Header = () => {
 
 
     const handleSignOut = () => {
-        logOut()
-            .then(() => {
-                swal("Log Out", "successful", "success")
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        swal({
+            title: "Are you sure you want to log out?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                logOut()
+                .then(() => {
+                    swal("Log Out", "successful", "success")
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+            }
+          });
     }
 
     const navLinks = <>
@@ -24,7 +34,7 @@ const Header = () => {
         <li><NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
+                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
         >
             Home
@@ -32,7 +42,7 @@ const Header = () => {
         <li><NavLink
             to="/gallery"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
+                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
         >
             Gallery
@@ -40,7 +50,7 @@ const Header = () => {
         <li><NavLink
             to="/about"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
+                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
         >
             About us
@@ -48,7 +58,7 @@ const Header = () => {
         <li><NavLink
             to="/contact"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded" : ""
+                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
         >
             Contact
@@ -65,7 +75,7 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="space-y-2 menu  menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44">
+                        <ul tabIndex={0} className="space-y-2 menu  menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-44">
                             {navLinks}
                         </ul>
                     </div>
@@ -76,7 +86,7 @@ const Header = () => {
                         <li ><NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             Home
@@ -84,7 +94,7 @@ const Header = () => {
                         <li ><NavLink
                             to="/gallery"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             Gallery
@@ -92,7 +102,7 @@ const Header = () => {
                         <li><NavLink
                             to="/about"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             About us
@@ -100,7 +110,7 @@ const Header = () => {
                         <li><NavLink
                             to="/contact"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded text-white px-4 py-2" : ""
+                                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded px-4 py-2" : ""
                             }
                         >
                             Contact
@@ -113,11 +123,11 @@ const Header = () => {
                             user ? <div className="dropdown dropdown-end">
                                 <label tabIndex={0} >
                                     <div className="avatar cursor-pointer">
-                                        <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <div className="w-11 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-2">
                                             {
                                                 user?.photoURL ?
                                                     <img src={user.photoURL} /> :
-                                                    <img className="bg-orange-500 text-white" />
+                                                    <img className="bg-purple-500 text-white" />
                                             }
                                         </div>
                                     </div>
@@ -132,7 +142,7 @@ const Header = () => {
                                 <li><NavLink
                                     to="/login"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "bg-orange-500 text-white rounded px-4 py-2" : ""
+                                        isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded px-4 py-2" : ""
                                     }
                                 >
                                     Login

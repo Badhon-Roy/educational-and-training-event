@@ -13,7 +13,7 @@ const ServicesDetails = () => {
             <p className="text-2xl font-semibold">Price : ${price}</p>
             <div className="flex justify-end">
                 <Link to='/'>
-                    <button className="btn transform translate-x-0 transition-transform ease-in-out duration-300 hover:-translate-x-10 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-4 hover:from-green-500 hover:to-blue-500">See details <FaArrowLeft /> </button>
+                    <button className="btn transform translate-x-0 transition-transform ease-in-out duration-300 hover:-translate-x-10 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-4 hover:from-green-500 hover:to-blue-500">Back Home <FaArrowLeft /> </button>
                 </Link>
             </div>
         </div>
