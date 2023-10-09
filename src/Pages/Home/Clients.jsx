@@ -16,11 +16,11 @@ const Clients = () => {
         progressContent.current.textContent = `${Math.ceil(time / 1000)}s`
     }
     return (
-        <div className='mb-8'>
+        <div className='mb-8 client-section' >
             <div data-aos="fade-right"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
-                <h2 className="md:text-4xl text-2xl text-center font-semibold md:mt-32 mt-16 md:mb-16 mb-8" >Happy Client<span className="w-[50px] mt-1 h-[5px]  mx-auto border-b-[5px] block border-orange-500"></span> </h2>
+                <h2 className="md:text-4xl text-2xl text-center font-semibold md:mt-32 mt-16 md:mb-16 mb-8" >Happy Clients<span className="w-[50px] mt-1 h-[5px]  mx-auto border-b-[5px] block border-orange-500"></span> </h2>
             </div>
             <Swiper
                 spaceBetween={30}

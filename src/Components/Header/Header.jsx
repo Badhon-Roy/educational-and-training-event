@@ -31,32 +31,36 @@ const Header = () => {
 
     const navLinks = <>
 
-        <li><NavLink
+        <li className='bg-gray-200 '><NavLink
             to="/"
+            style={{width : '100%', display : 'block' ,paddingLeft : '10px'}}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
         >
             Home
         </NavLink></li>
-        <li><NavLink
+        <li className='bg-gray-200 '><NavLink
             to="/gallery"
+            style={{width : '100%', display : 'block', paddingLeft : '10px'}}
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
+                isPending ? "pending w-full" : isActive ? "bg-purple-500 text-white rounded w-full" : "w-full px-1"
             }
         >
             Gallery
         </NavLink></li>
-        <li><NavLink
+        <li className='bg-gray-200 '><NavLink
             to="/about"
+            style={{width : '100%', display : 'block',paddingLeft : '10px'}}
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
+                isPending ? "pending w-full" : isActive ? "bg-purple-500 text-white rounded w-full" : " w-full"
             }
         >
             About us
         </NavLink></li>
-        <li><NavLink
+        <li className='bg-gray-200 '><NavLink
             to="/contact"
+            style={{width : '100%', display : 'block',paddingLeft : '10px'}}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-purple-500 text-white rounded" : ""
             }
@@ -75,7 +79,7 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="space-y-2 menu  menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-44">
+                        <ul tabIndex={0} className="space-y-2 w-36 dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box">
                             {navLinks}
                         </ul>
                     </div>

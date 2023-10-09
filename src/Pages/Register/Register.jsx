@@ -9,7 +9,6 @@ const Register = () => {
     const [errorMassage, setErrorMassage] = useState('')
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
-
     const handleRegister = e => {
         e.preventDefault()
         const name = e.target.name.value;

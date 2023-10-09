@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css';
-import 'aos/dist/aos.css'; // Import the CSS
+import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from "react";
 import { TypeAnimation } from 'react-type-animation';
@@ -21,7 +21,7 @@ const Home = () => {
         <div>
             <div >
                 <Swiper
-                    spaceBetween={50}
+                    spaceBetween={0}
                     slidesPerView={1}
                     modules={[Navigation]}
                     navigation

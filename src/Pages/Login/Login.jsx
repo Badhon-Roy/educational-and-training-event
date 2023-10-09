@@ -12,7 +12,7 @@ const Login = () => {
 
     const { googleSignIn, signIn } = useContext(AuthContext)
     const handleLogin = e => {
-        setErrorMassage('')
+        // setErrorMassage('')
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -23,10 +23,10 @@ const Login = () => {
                 swal("Log in", "successful", "success")
                 e.target.reset();
             })
-            .catch(error => {
-                setErrorMassage(error.message);
-                return;
+            .catch(() => {
+                setErrorMassage('login failed please check your email and password and try again');
             })
+            
 
     }
     const handleGoogleLogin = () => {
