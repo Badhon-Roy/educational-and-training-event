@@ -9,6 +9,7 @@ import 'aos/dist/aos.css'; // Import the CSS
 import AOS from 'aos';
 import { useEffect } from "react";
 import { TypeAnimation } from 'react-type-animation';
+import Clients from "./Clients";
 const Home = () => {
     useEffect(() => {
         AOS.init({
@@ -87,6 +88,9 @@ const Home = () => {
             </div>
             <div>
                 <Photographers></Photographers>
+            </div>
+            <div>
+                <Clients></Clients>
             </div>
 
         </div>
