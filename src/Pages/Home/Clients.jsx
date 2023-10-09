@@ -37,7 +37,7 @@ const Clients = () => {
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="mySwiper"
             >
-                <SwiperSlide><div className="md:h-[50vh] h-[40vh]">
+                <SwiperSlide><div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
@@ -60,7 +60,7 @@ const Clients = () => {
                     </div>
                 </div></SwiperSlide>
                 <SwiperSlide>
-                <div className="md:h-[50vh] h-[40vh]">
+                <div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
@@ -84,7 +84,7 @@ const Clients = () => {
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="md:h-[50vh] h-[40vh]">
+                <div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
@@ -107,7 +107,7 @@ const Clients = () => {
                     </div>
                 </div>
                 </SwiperSlide>
-                <SwiperSlide><div className="md:h-[50vh] h-[40vh]">
+                <SwiperSlide><div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
@@ -130,7 +130,7 @@ const Clients = () => {
                     </div>
                 </div></SwiperSlide>
                 <SwiperSlide>
-                <div className="md:h-[50vh] h-[40vh]">
+                <div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
@@ -154,7 +154,7 @@ const Clients = () => {
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="md:h-[50vh] h-[40vh]">
+                <div className="h-auto py-10">
                     <div className="flex justify-center items-center text-center h-full lg:px-32 md:px-16 px-8">
                         <div>
                             <div className="avatar ">
