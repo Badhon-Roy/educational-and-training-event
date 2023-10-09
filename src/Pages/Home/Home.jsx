@@ -77,7 +77,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex-1">
-                    <div data-aos="fade-left"
+                    <div data-aos="fade-right"
                         data-aos-offset="300"
                         data-aos-easing="ease-in-sine">
                         <h2 className="md:text-4xl text-2xl font-bold mt-4"><span className="text-orange-500">Unforgettable</span> educational training program events</h2>

@@ -12,6 +12,7 @@ const Login = () => {
 
     const { googleSignIn, signIn } = useContext(AuthContext)
     const handleLogin = e => {
+        setErrorMassage('')
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;

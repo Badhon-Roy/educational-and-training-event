@@ -9,13 +9,15 @@ const Contact = () => {
         });
     }, []);
     return (
-        <div className="">
-            <h2 className="text-center text-4xl font-bold my-8">Contact us</h2>
+        <div>
+            <div data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <h2 className="text-center md:text-4xl text-2xl font-bold my-8">Contact us</h2>
+            </div>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
 
-                <div data-aos="fade-right"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
+                <div data-aos="zoom-in"
                     className='relative group'>
                     <div className='transition-transform transform scale-95 group-hover:scale-100 duration-300'>
                         <a href="#" className="flex flex-col md:md:items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 ">
@@ -31,9 +33,7 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div data-aos="fade-left"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
+                <div data-aos="zoom-in"
                     className='relative group'>
                     <div className='transition-transform transform scale-95 group-hover:scale-100 duration-300'>
                         <a href="#" className="flex flex-col md:items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 ">
@@ -49,9 +49,7 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div data-aos="fade-right"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
+                <div data-aos="zoom-in"
                     className='relative group'>
 
                     <div className='transition-transform transform scale-95 group-hover:scale-100 duration-300'>
@@ -68,29 +66,27 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div data-aos="fade-left"
-                    data-aos-easing="linear"
-                    data-aos-duration="1000"
+                <div data-aos="zoom-in"
                     className='relative group'>
                     <div className='transition-transform transform scale-95 group-hover:scale-100 duration-300'>
-                    <a href="#" className="flex flex-col md:items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 ">
-                        <img className="object-cover h-[250px] md:h-[200px] w-full rounded-t-lg md:w-1/3 md:rounded-none md:rounded-l-lg" src="https://tinyurl.com/y8kxz52s" alt="" />
-                        <div className="flex flex-col justify-between p-4 leading-normal">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                                New Delhi</h5>
-                            <p className="mb-3 text-gray-700 flex gap-3"><MdLocationPin className='text-xl'></MdLocationPin>  26, 5928  The Delhi.</p>
-                            <p className='mb-3 text-gray-700 flex gap-3'><MdLocalPhone className='text-xl'></MdLocalPhone> +31(0)77 472 3683</p>
-                            <p className='mb-3 text-gray-700 flex gap-3'><MdOutlineMail className='text-xl'></MdOutlineMail> info@eventplace.com</p>
+                        <a href="#" className="flex flex-col md:items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 ">
+                            <img className="object-cover h-[250px] md:h-[200px] w-full rounded-t-lg md:w-1/3 md:rounded-none md:rounded-l-lg" src="https://tinyurl.com/y8kxz52s" alt="" />
+                            <div className="flex flex-col justify-between p-4 leading-normal">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    New Delhi</h5>
+                                <p className="mb-3 text-gray-700 flex gap-3"><MdLocationPin className='text-xl'></MdLocationPin>  26, 5928  The Delhi.</p>
+                                <p className='mb-3 text-gray-700 flex gap-3'><MdLocalPhone className='text-xl'></MdLocalPhone> +31(0)77 472 3683</p>
+                                <p className='mb-3 text-gray-700 flex gap-3'><MdOutlineMail className='text-xl'></MdOutlineMail> info@eventplace.com</p>
 
-                        </div>
-                    </a>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
             </div>
-        
-            <div className='bg-white my-8 md:p-16 p-8 shadow-lg rounded'> 
-                <h3 className='text-4xl font-bold mb-8'>How Can We Help</h3>
+
+            <div className='bg-white my-8 md:p-16 p-8 shadow-lg rounded'>
+                <h3 className='md:text-4xl text-2xl font-bold mb-8'>How Can We Help</h3>
                 <form>
                     <div className="grid md:grid-cols-2 md:gap-6">
                         <div className="relative z-0 w-full mb-6 group">
